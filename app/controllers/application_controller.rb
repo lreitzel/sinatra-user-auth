@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
 
   configure do
     enable :sessions
-    set :session_secret, "secret"
+    set :session_secret, "secret" 
   end
 
   get '/' do
@@ -22,6 +22,7 @@ class ApplicationController < Sinatra::Base
     session[:user_id] = @user.id
 
     redirect '/users/home'
+    puts params
   end
 
   get '/sessions/login' do
